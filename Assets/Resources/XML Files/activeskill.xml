@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ArrayOfActiveskill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <activeskill>
+        <Id>20000</Id>
+            <skillID>20000</skillID>
+            <typeSkill>Active</typeSkill>
+            <skillName>普通攻击</skillName>
+            <mpUse>0</mpUse>
+            <multipleDamage>1</multipleDamage>
+            <baseDam>0</baseDam>
+            <skillAccurate>100</skillAccurate>
+            <damageType>Normal</damageType>
+            <addAttribute>None</addAttribute>
+            <addValue>0</addValue>
+            <cd>0</cd>
+            <skillPower>100</skillPower>
+            <Skilllvgactiveskillth>0</Skilllvgactiveskillth>
+            <description>100%物理伤害</description>
+            <isRecover>0</isRecover>
+        </activeskill>
+        <activeskill>
+        <Id>20001</Id>
+            <skillID>20001</skillID>
+            <typeSkill>Active</typeSkill>
+            <skillName>抽打123</skillName>
+            <mpUse>10</mpUse>
+            <multipleDamage>1</multipleDamage>
+            <baseDam>0</baseDam>
+            <skillAccurate>100</skillAccurate>
+            <damageType>Normal</damageType>
+            <addAttribute>None</addAttribute>
+            <addValue>0</addValue>
+            <cd>3</cd>
+            <skillPower>110</skillPower>
+            <Skilllvgactiveskillth>0</Skilllvgactiveskillth>
+            <description>110%物理伤害</description>
+            <isRecover>0</isRecover>
+        </activeskill>
+        <activeskill>
+        <Id>20004</Id>
+            <skillID>20004</skillID>
+            <typeSkill>Active</typeSkill>
+            <skillName>喷射沙子 </skillName>
+            <mpUse>10</mpUse>
+            <multipleDamage>5</multipleDamage>
+            <baseDam>0</baseDam>
+            <damageType>Normal</damageType>
+            <addAttribute>None</addAttribute>
+            <addValue>0</addValue>
+            <cd>6</cd>
+            <skillPower>15</skillPower>
+            <skillLvGrowth>0</skillLvGrowth>
+            <description>BOSS技能，30次2%攻击</description>
+            <isRecover>0</isRecover>
+        </activeskill>
+
+        <activeskill>
+        <Id>20006</Id>
+            <skillID>20006</skillID>
+            <typeSkill>Active</typeSkill>
+            <skillName>重击 </skillName>
+            <mpUse>10</mpUse>
+            <multipleDamage>1</multipleDamage>
+            <baseDam>0</baseDam>
+            <damageType>Normal</damageType>
+            <addAttribute>S</addAttribute>
+            <addValue>0</addValue>
+            <cd>9</cd>
+            <skillPower>100</skillPower>
+            <skillLvGrowth>0</skillLvGrowth>
+            <description>身为一个战士，你能够熟练运用自己的力量，本次伤害附加10%的力量属性</description>
+            <isRecover>0</isRecover>
+        </activeskill>
+
+        <activeskill>
+        <Id>20002</Id>
+            <skillID>20002</skillID>
+            <typeSkill>Active</typeSkill>
+            <skillName>回复 </skillName>
+            <mpUse>10</mpUse>
+            <multipleDamage>1</multipleDamage>
+            <baseDam>0</baseDam>
+            <damageType>True1</damageType>
+            <addAttribute>HP</addAttribute>
+            <addValue>10</addValue>
+            <cd>3</cd>
+            <skillPower>0</skillPower>
+            <skillLvGrowth>0</skillLvGrowth>
+            <description>回复10%HP</description>
+            <isRecover>1</isRecover>
+        </activeskill>
+</ArrayOfActiveskill>

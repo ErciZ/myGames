@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ArrayOfEquipments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <equipments>
+    <Id>123456</Id>
+    <equipmentID>0</equipmentID>
+    <Name>???</Name>
+    <Quality>Normal</Quality>
+    <Description>??</Description>
+    <Capacity>0</Capacity>
+    <BuyPrice>0</BuyPrice>
+    <SellPrice>0</SellPrice>
+    <icon>10001</icon>
+    <requiredS>0</requiredS>
+    <requiredP>0</requiredP>
+    <requiredD>0</requiredD>
+    <requiredA>0</requiredA>
+    <requiredI>0</requiredI>
+    <HP>0</HP>
+    <MP>0</MP>
+    <S>0</S>
+    <P>0</P>
+    <D>0</D>
+    <A>0</A>
+    <I>0</I>
+    <AtkValue>0</AtkValue>
+    <DefValue>0</DefValue>
+    <AValue>0</AValue>
+    <MagicAtk>0</MagicAtk>
+    <MagicDef>0</MagicDef>
+    <Comprehension>0</Comprehension>
+    <Luck>0</Luck>
+    <AttackSpeed>0</AttackSpeed>
+    <Crit>0</Crit>
+    <CritDamage>0</CritDamage>
+    <Hit>0</Hit>
+    <Agl>0</Agl>
+    <HPRecoverPerSecond>0</HPRecoverPerSecond>
+    <MPRecoverPerSecond>0</MPRecoverPerSecond>
+    <stamina>0</stamina>
+    <EquipType>weapon</EquipType>
+    <skill>20001</skill>
+  </equipments>
+</ArrayOfEquipments>

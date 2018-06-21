@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio for Mac
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我是传奇2", "我是传奇2.csproj", "{94BDABE6-5BEE-D103-BB50-0EB57E118A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我是传奇2.Plugins", "我是传奇2.Plugins.csproj", "{AAC6A3EC-2ABA-4F91-4C57-2DAFC184567D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我是传奇2.Editor", "我是传奇2.Editor.csproj", "{94F90DAA-E902-20D6-8FF7-DA11BDF7680D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "我是传奇2.Editor.Plugins", "我是传奇2.Editor.Plugins.csproj", "{93AFC3A5-8AD3-845C-9872-E20512B3843F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94BDABE6-5BEE-D103-BB50-0EB57E118A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94BDABE6-5BEE-D103-BB50-0EB57E118A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BDABE6-5BEE-D103-BB50-0EB57E118A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94BDABE6-5BEE-D103-BB50-0EB57E118A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC6A3EC-2ABA-4F91-4C57-2DAFC184567D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC6A3EC-2ABA-4F91-4C57-2DAFC184567D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC6A3EC-2ABA-4F91-4C57-2DAFC184567D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC6A3EC-2ABA-4F91-4C57-2DAFC184567D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F90DAA-E902-20D6-8FF7-DA11BDF7680D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F90DAA-E902-20D6-8FF7-DA11BDF7680D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F90DAA-E902-20D6-8FF7-DA11BDF7680D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F90DAA-E902-20D6-8FF7-DA11BDF7680D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93AFC3A5-8AD3-845C-9872-E20512B3843F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AFC3A5-8AD3-845C-9872-E20512B3843F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AFC3A5-8AD3-845C-9872-E20512B3843F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AFC3A5-8AD3-845C-9872-E20512B3843F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
