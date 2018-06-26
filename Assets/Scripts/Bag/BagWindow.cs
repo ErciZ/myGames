@@ -22,13 +22,14 @@ public class BagWindow : Window
 		_list = this.contentPane.GetChild("list").asList;
 		_list.onClickItem.Add(__clickItem);
 		_list.itemRenderer = RenderListItem;
-		_list.numItems = 60;
+		_list.numItems = 40;
 	}
 
 	 void RenderListItem(int index, GObject obj)
 	{
         //Debug.Log(index);
 		GButton button = (GButton)obj;
+		button.title = "";
 		//button.icon = "i" + UnityEngine.Random.Range(0, 10);//n11   物品图标
 		//button.title = "" + UnityEngine.Random.Range(0, 100);//name 物品数量
 	}
@@ -49,7 +50,7 @@ public class BagWindow : Window
 	void __clickItem(EventContext context)
 	{
 		GButton item = (GButton)context.data;
-		this.contentPane.GetChild("n11").asLoader.url = item.icon;
+		//this.contentPane.GetChild("n11").asLoader.url = item.icon;
         this.contentPane.GetChild("number").text = "1";
         //this.contentPane.GetChild("name").text = "1111";
 		this.contentPane.GetChild("name").text = item.icon;//选中的物品名称

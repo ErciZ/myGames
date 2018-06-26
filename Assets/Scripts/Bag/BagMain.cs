@@ -15,16 +15,16 @@ public class BagMain : MonoBehaviour
 		UIObjectFactory.SetLoaderExtension(typeof(MyGLoader));
 
 	}
-
+    
 	void Start()
 	{
 		Application.targetFrameRate = 60;
 		Stage.inst.onKeyDown.Add(OnKeyDown);
-        GRoot.inst.SetContentScaleFactor(740, 1280);
+        GRoot.inst.SetContentScaleFactor(720, 1280);
 		_mainView = this.GetComponent<UIPanel>().ui;
 		
-		_bagWindow = new BagWindow();
-		_mainView.GetChild("bagBtn").onClick.Add(() => { _bagWindow.Show(); });
+		//_bagWindow = new BagWindow();
+		//_mainView.GetChild("bagBtn").onClick.Add(() => { _bagWindow.Show(); });
 	}
 
 	void OnKeyDown(EventContext context)

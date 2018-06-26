@@ -23,17 +23,11 @@ public class PlayerControl : MonoBehaviour
     public enum DamageType { Normal, Magic, True };//伤害类型
     public ClassType classType; //Class hero
     public GameObject target;     //Target enemy
-    //public GameObject targetMoveTo; //Target move to (ex. npc , item)
 
 
     public bool autoAttack; 
-
-    //Get component other script
-    //private HeroStatus hero;  
+     
     private PlayerSkill playerSkill;
-    //private TurnControl turnScript; 
-    //private EnemyControl enemyScript;
-    //private EnemyStatus enemy;
 
     private GComponent _mainView;
     private GList _list;
@@ -67,13 +61,9 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector]
     public int typeTakeAttack;          //Type TakeAttack
 
-	//private bool oneShotOpenDeadWindow;
-	//public List<CountDownTimer> cdTimers = new List<CountDownTimer>();
+
 	public Dictionary<int, CountDownTimer> cdTimers = new Dictionary<int, CountDownTimer>();
-    //public int layerActiveGround = 11;
-    //public int layerActiveItem = 10;
-    //public int layerActiveEnemy = 9;
-    //public int layerActiveNpc = 13;
+
 
     //Editor Variable
     [HideInInspector]
@@ -95,17 +85,9 @@ public class PlayerControl : MonoBehaviour
 
 	void Start()
 	{
-		//layerActiveGround = 11;
-		//layerActiveItem = 10;
-		//layerActiveEnemy = 9;
-
-		//hero = GameObject.Find("hero").GetComponent<HeroStatus>();
-		//enemy = GameObject.Find("enemy(Clone)").GetComponent<EnemyStatus>();
-
+      
 
 		playerSkill = this.GetComponent<PlayerSkill>();
-		//turnScript = GameObject.Find("TurnSystem").GetComponent<TurnControl>();
-		//enemyScript = GameObject.Find("TurnSystem").GetComponent<EnemyControl>();
 
 		Application.targetFrameRate = 60;
 		_mainView = GameObject.Find("UIPanel").GetComponent<UIPanel>().ui;
@@ -142,54 +124,6 @@ public class PlayerControl : MonoBehaviour
                 WaitAttack();
           
         }
-		//Debug.Log("0---"+cdTimers[HeroStatus.instance.used_activeskill[0].skillID]);
-		//Debug.Log("1---" + cdTimers[1].CurrentTime);
-		//Debug.Log("2---" + cdTimers[2].CurrentTime);
-		//Debug.Log("3---" + cdTimers[3].CurrentTime);
-		//Debug.Log("4---" + cdTimers[4].CurrentTime);
-		//Debug.Log("5---" + cdTimers[5].CurrentTime);
-		//Debug.Log("6---" + cdTimers[6].CurrentTime);
-		//Debug.Log(cdTimers[0].IsTimeUp);
-      
-           
-
-                ////Debug.Log("主角使用了普通攻击");
-                ////播放攻击动画  
-                ////enemyAnimator.SetTrigger("attack");
-                //int damage = Damage();
-                ////text.text = text.text + "你使用了普通攻击，对怪物造成了" + damage + "点伤害\n";
-                ////延迟1s出现玩家操作UI  
-                //enemyScript.ReceiveDamage(damage, "Normal", "普通攻击");
-                ////延迟1s出现玩家操作UI  
-                //StartCoroutine("EnemyWait");
-                //turnScript.isHeroAction = false;
-                //turnScript.isEnemyAction = true;
-
-
-      
-
-
-
-        ////游戏状态是Game才会进行  
-        //if (turnScript.currentState == TurnControl.GameState.Game)
-        //{
-        //    if (turnScript.isHeroAction)
-        //    {
-        //        //Debug.Log("主角使用了普通攻击");
-        //        //播放攻击动画  
-        //        //enemyAnimator.SetTrigger("attack");
-        //        int damage = Damage();
-        //        //text.text = text.text + "你使用了普通攻击，对怪物造成了" + damage + "点伤害\n";
-        //        //延迟1s出现玩家操作UI  
-        //        enemyScript.ReceiveDamage(damage, "Normal", "普通攻击");
-        //        //延迟1s出现玩家操作UI  
-        //        StartCoroutine("EnemyWait");
-        //        turnScript.isHeroAction = false;
-        //        turnScript.isEnemyAction = true;
-
-
-        //    }
-        //}
     }
 
 
@@ -242,27 +176,7 @@ public class PlayerControl : MonoBehaviour
         }
 
 		return damage;
-
-        ////判断命中
-        //if (IsHit(HeroStatus.instance.CurStatus.CurHit, EnemyStatus.instance.CurStatus.CurAgl))
-        //{
-        //    //判断暴击
-        //    if (CriticalCal(HeroStatus.instance.CurStatus.CurCrit))
-        //    {
-        //        damage = ((int)(damage * (1f + HeroStatus.instance.CurStatus.CurCritDamage)));
-        //        return damage;
-        //    }
-        //    else
-        //    {
-        //        return damage;
-        //    }
-        //}
-        //else
-        //{
-        //    return -1;
-        //}
-
-
+      
     }
 
 
@@ -434,19 +348,8 @@ public class PlayerControl : MonoBehaviour
 			//Debug.Log("aaaaaaaaa"+playerSkill.canCast);
             if (playerSkill.canCast)
             {
-				//HeroStatus.instance.used_activeskill[x].cdCount.Start();
-				//Debug.Log("开始放技能" + HeroStatus.instance.used_activeskill[x].cdCount.IsTimeUp);
-				//Debug.Log("释放技能：" + HeroStatus.instance.used_activeskill[x].skillName);
 				playerSkill.playActiveSkill(HeroStatus.instance.used_activeskill[x]);
-				//Debug.Log(x+"释放技能是的cd时间"+cdTimers[HeroStatus.instance.used_activeskill[x].skillID].CurrentTime);
 				cdTimers[HeroStatus.instance.used_activeskill[x].skillID].Start();
-				//cdTimers[x].Start();
-				//Debug.Log(x);
-				//Debug.Log(x+"开始转cd"+"-----"+HeroStatus.instance.used_activeskill[x].skillName);
-				//HeroStatus.instance.used_activeskill[x].cdCount=cdCount;            
-				//HeroStatus.instance.used_activeskill[x].cdCount.Start();
-				//Debug.Log("刚放完技能"+HeroStatus.instance.used_activeskill[x].cdCount.IsTimeUp);
-				//CountDownTimer cdTimer = new CountDownTimer(HeroStatus.instance.used_activeskill[x].cd);
             }
             else
             {
@@ -492,18 +395,9 @@ public class PlayerControl : MonoBehaviour
     }
 
 
+   
 
-    //在切换到敌人操作前添加延迟  
-    IEnumerator EnemyWait()
-    {
-        yield return new WaitForSeconds(1);
-        TurnControl.instance.isEnemyAction = true;
-    }
-
-
-
-
-
+   
     void TargetLock()
     {
 
@@ -542,14 +436,7 @@ public class PlayerControl : MonoBehaviour
         useFreeSkill = false;
         //GameSetting.Instance.SetMouseCursor(0);
     }
-
-
-
-
-
-
-
-
+   
 
     public void GetCastID(int caseID)
     {

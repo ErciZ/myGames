@@ -536,7 +536,6 @@
     <Compile Include="Assets\Scripts\Item\equipments.cs" />
     <Compile Include="Assets\Scripts\Item\Item.cs" />
     <Compile Include="Assets\Scripts\Item\Material.cs" />
-    <Compile Include="Assets\Scripts\Item\Weapon.cs" />
     <Compile Include="Assets\Scripts\login\loginButton.cs" />
     <Compile Include="Assets\Scripts\login\playerlogin.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
@@ -571,6 +570,9 @@
     <Compile Include="Assets\Scripts\Time\CountDownTimer.cs" />
     <Compile Include="Assets\Scripts\VirtualList\MailItem.cs" />
     <Compile Include="Assets\Scripts\VirtualList\VirtualListMain.cs" />
+    <Compile Include="Assets\Scripts\Bag\BagEquipment.cs" />
+    <Compile Include="Assets\Scripts\Bag\BagConsumable.cs" />
+    <Compile Include="Assets\Scripts\Bag\BagMaterial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\111.xml" />

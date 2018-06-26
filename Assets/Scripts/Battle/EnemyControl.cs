@@ -25,13 +25,7 @@ public class EnemyControl : MonoBehaviour
 	public activeskill normalAtk = new activeskill();
 
 	private EnemySkill playerSkill;
-    //private HeroStatus hero;
-    //Private variable
-    //Get component other script
 
-    //private EnemyStatus enemy;
-
-    //private Quest_Data questData;
     private GComponent _mainView;
     private GList _list;
     //回合控制脚本  
@@ -60,11 +54,7 @@ public class EnemyControl : MonoBehaviour
     [HideInInspector]
     public int sizeMesh;
 
-
-
-
-    //动画组件    
-    //private Animator enemyAnimator;
+    
 
 
 
@@ -72,18 +62,13 @@ public class EnemyControl : MonoBehaviour
     {
         GameObject Enemy = (GameObject)Instantiate(Resources.Load("Prefabs/enemy"));  
         instance = this;
-        //Debug.Log(Enemy==null);
-       // enemy = GameObject.Find("enemy(Clone)").GetComponent<EnemyStatus>();
-        //hero = GameObject.Find("hero").GetComponent<HeroStatus>();
 
     }
 
     void Start()
     {
 
-        //HeroStatus.instance = GameObject.Find("TurnSystem").GetComponent<TurnControl>();
-        //TurnControl.instance = GameObject.Find("TurnSystem").GetComponent<TurnControl>();
-        //PlayerControl.instance = GameObject.FindGameObjectWithTag("HeroUnit").GetComponent<PlayerControl>();
+  
         _mainView = GameObject.Find("UIPanel").GetComponent<UIPanel>().ui;
 
         _list = _mainView.GetChild("mailList").asList;
@@ -170,14 +155,7 @@ public class EnemyControl : MonoBehaviour
 	void doTrun(int a)
 	{
 		int x = a % 7;
-		//Debug.Log(x);
 
-
-		//Debug.Log("length"+enemy.use_activeSkillAttack.Length);
-
-
-
-		//Debug.Log(EnemyStatus.instance.used_activeskill[x].skillID);
 		if (EnemyStatus.instance.used_activeskill[x].skillID == 20000)
 		{
 			//if (enemy.use_activeSkillAttack[x] ==0){
@@ -186,8 +164,6 @@ public class EnemyControl : MonoBehaviour
 		}
             
         else{
-			//Debug.Log(x);
-			//Debug.Log(EnemyStatus.instance.used_activeskill[x].skillName);
 				playerSkill.CastActiveSkill(EnemyStatus.instance.used_activeskill[x]);
 				if (playerSkill.canCast)
 				{
@@ -216,12 +192,6 @@ public class EnemyControl : MonoBehaviour
         int damage = 0;
         damage = (int)(( 1f * EnemyStatus.instance.CurStatus.CurAtkValue) *(10f)* (1f) * Random.Range(85, 101f) / 100f);
 
-        //damage = (int)(((enemy.BaseStatus.LV * 2f / 5f + 2f) * 1f * enemy.CurStatus.CurAtkValue) *(10f)* (1f) * Random.Range(85, 101f) / 100f);
-        //int damage = Mathf.Max(0, attack - enemyScript.(int)hero.CurStatus.CurDefValue);
-        //Debug.Log(damage);
-        //判断命中
-        //if (IsHit(enemy.CurStatus.CurHit, hero.CurStatus.CurAgl))
-        //if (IsHit(enemy.CurStatus.CurHit, HeroStatus.instance.CurStatus.CurAgl))
         if (IsHit(EnemyStatus.instance.CurStatus.CurHit, HeroStatus.instance.CurStatus.CurAgl))
         {
             //判断暴击
@@ -291,9 +261,6 @@ public class EnemyControl : MonoBehaviour
 
     public void Reborn()
     {
-        //int a =randomEnemy();
-        //cloud.getEnemyStatus(a);
-        //enemy.UpdateAttribute();
         EnemyStatus.instance.CurStatus.CurHP = EnemyStatus.instance.SumStatus.HP;
         EnemyStatus.instance.CurStatus.CurMP = EnemyStatus.instance.SumStatus.MP;
 
@@ -309,27 +276,6 @@ public class EnemyControl : MonoBehaviour
         return x;
     }
 
-  //public void   ReceiveDamage(int damage, string damageType, string skillName){
-    //    enemy.CurStatus.CurHP -= damage/1000f;
-
-    //    int index = _list.ItemIndexToChildIndex(TurnControl.instance._index);
-    //    GObject obj = _list.GetChildAt(index + 11);
-
-    //    string str = "你对XXX造成了" + damage + "点伤害";
-    //    _list.AddSelection(TurnControl.instance._index, true);
-    //    MailItem item = (MailItem)obj;
-    //    item.setText(str);
-    //    TurnControl.instance._index = TurnControl.instance._index + 1;
-
-    //    if (enemy.CurStatus.CurHP <= 0)
-    //    {
-    //        str = "你消灭了敌人";
-    //        item.setText(str);
-    //        //text.text = text.text + "你消灭了敌人\n";
-    //        //enemyAnimator.SetTrigger("dead");
-    //    }
-        
-    //}
        
     public void ShowText(int  damage, string damageType, string skillName)
     {
@@ -470,42 +416,8 @@ public class EnemyControl : MonoBehaviour
     }
 
 
-    //public void Reborn()
-    //{
-
-    //    HeroStatus.instance.CurStatus.CurHP = HeroStatus.instance.SumStatus.HP;
-    //    HeroStatus.instance.CurStatus.CurMP = HeroStatus.instance.SumStatus.MP;
-
-    //    HeroStatus.instance.CurStatus.CurExp -= (HeroStatus.instance.CurStatus.CurExp / 10f);//死亡惩罚
-    //    if (HeroStatus.instance.CurStatus.CurExp < 0)
-    //    {
-    //        HeroStatus.instance.CurStatus.CurExp = 0;
-    //    }
-
-    //    HeroStatus.instance.StartRegen();
-
-    //    target = null;
-    //    alreadyLockSkill = false;
-
-
-
-    //}
-
 }
     
-
-
-    //void AddKillCountQuest()
-    //{
-        //for (int i = 0; i < questData.questSetting.Count; i++)
-        //{
-        //    if (questData.questSetting[i].idCondition.x == enemyStatus.enemyID && questData.questSetting[i].questCondition == Quest_Data.QuestCondition.Hunting && questData.questSetting[i].isStart)
-        //    {
-        //        questData.questSetting[i].killCount += 1;
-        //        break;
-        //    }
-        //}
-    //}
 
    
 

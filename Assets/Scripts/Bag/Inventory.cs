@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour {
         win.Center();
         win.modal = true;
 
-        _list = win.contentPane.GetChild("list").asList;
+        _list = win.contentPane.GetChild("list1").asList;
   
          Weapon = (GameObject)Instantiate(Resources.Load("Prefabs/Weapon"));  
          Head = (GameObject)Instantiate(Resources.Load("Prefabs/Head"));  
@@ -53,17 +53,7 @@ public class Inventory : MonoBehaviour {
         Leg1 = GameObject.Find("Leg(Clone)").GetComponent<EquipmentAttribute>();
         Ring1 = GameObject.Find("Ring(Clone)").GetComponent<EquipmentAttribute>();
 
-		//for (int a = 0; a < 5; a = a + 1)
-		//{
-		//    //Debug.Log(equiped_armor[a]);
-		//    //CloudManager.instance.getEquipmentStatus(equiped_armor[a]);
-		//    StartCoroutine(UpdateAddattribute_equip_E(equiped_armor[a]));
-		//    //UpdateAddattribute_equip_E(equiped_armor[a]);
-		//}
-
-		//StartCoroutine(HasEquiped());
-		//HasEquipAttribute();
-      
+	
 	}
 
 	private void Awake()

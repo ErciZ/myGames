@@ -76,27 +76,67 @@ public class CloudManager : MonoBehaviour
         Debug.Log(gameScore);
     }
 
-
     
-	void makeBag(string playId){
-		AVQuery<AVObject> playerBag = new AVQuery<AVObject>("Bag").WhereEqualTo("objectId", playId);
-        
+    
+	void makeBag_equipment(string playId){
+		//新建一个装备背包
+		AVQuery<AVObject> playerBag = new AVQuery<AVObject>("BagEquipment").WhereEqualTo("objectId", playId);
 
-        
+
 		playerBag.FirstAsync().ContinueWith(t =>
         {
             AVObject myBag = t.Result;
             
-			for (int i = 0; i < 60; i++)
+			for (int i = 0; i < 40; i++)
             {
 				int x = myBag.Get<int>(string.Format("{0}", i));
-				PlayerData.Instance.itemList.Add(x,0);
+				PlayerData.Instance.itemList_e.Add(x,0);
             }
 
 
 
         });
 	}
+	void makeBag_consumable(string playId)
+    {
+        AVQuery<AVObject> playerBag = new AVQuery<AVObject>("BagConsumable").WhereEqualTo("objectId", playId);
+
+
+
+        playerBag.FirstAsync().ContinueWith(t =>
+        {
+            AVObject myBag = t.Result;
+
+            for (int i = 0; i < 40; i++)
+            {
+                int x = myBag.Get<int>(string.Format("{0}", i));
+				PlayerData.Instance.itemList_c.Add(x, 0);
+            }
+
+
+
+        });
+    }
+	void makeBag_material(string playId)
+    {
+        AVQuery<AVObject> playerBag = new AVQuery<AVObject>("BagMaterial").WhereEqualTo("objectId", playId);
+
+
+
+        playerBag.FirstAsync().ContinueWith(t =>
+        {
+            AVObject myBag = t.Result;
+
+            for (int i = 0; i < 40; i++)
+            {
+                int x = myBag.Get<int>(string.Format("{0}", i));
+				PlayerData.Instance.itemList_m.Add(x, 0);
+            }
+
+
+
+        });
+    }
 	public void readHeroData(string heroID) { 
 		AVQuery<AVObject> query = new AVQuery<AVObject>("HeroData").WhereEqualTo("heroID", heroID);
 
@@ -176,7 +216,7 @@ public class CloudManager : MonoBehaviour
         return null;
        
     }
-    public void getEquipmentStatus(int itemID)
+    public void getEquipmentStatus(int itemID)//已装备的装备属性
     {
         
         isEnd = false;
@@ -491,127 +531,7 @@ public class CloudManager : MonoBehaviour
 
     }
 
-    //public void getEquipmentStatus(int itemID)
-    //{
-    //    isEnd = false;
-    //    if (itemID != 0)
-    //    {
 
-
-    //        AVQuery<AVObject> equipment = new AVQuery<AVObject>("equipment").WhereEqualTo("id", itemID);
-
-    //        equipment.FirstAsync().ContinueWith(t =>
-    //        {
-    //            AVObject myEquip = t.Result;
-    //            Equipment.Instance.ID = myEquip.Get<int>("id");
-    //            Equipment.Instance.Name = myEquip.Get<string>("name");
-    //            //Debug.Log(myEquip.Get<string>("name"));
-    //            Equipment.Instance.Type = myEquip.Get<string>("type");
-    //            //Debug.Log(myEquip.Get<string>("type"));
-    //            Equipment.Instance.Quality = myEquip.Get<string>("quality");
-    //            //Debug.Log(myEquip.Get<string>("quality"));
-    //            Equipment.Instance.Description = myEquip.Get<string>("description");
-    //            //Debug.Log(myEquip.Get<string>("description"));
-    //            Equipment.Instance.Capacity = myEquip.Get<int>("capacity");
-    //            //Debug.Log(myEquip.Get<int>("capacity"));
-    //            Equipment.Instance.BuyPrice = myEquip.Get<int>("buyPrice");
-    //            //Debug.Log(myEquip.Get<int>("buyPrice"));
-    //            Equipment.Instance.SellPrice = myEquip.Get<int>("sellPrice");
-    //            //Debug.Log(myEquip.Get<int>("sellPrice"));
-    //            Equipment.Instance.Sprite = myEquip.Get<string>("sprite");
-    //            //Debug.Log(myEquip.Get<string>("sprite"));
-    //            Equipment.Instance.HP = myEquip.Get<int>("hp");
-    //            //Debug.Log("装备获得了"+Equipment.Instance.HP);
-    //            //Debug.Log(myEquip.Get<string>("name")+"装备获得的hp是"+myEquip.Get<int>("hp"));
-    //            Equipment.Instance.MP = myEquip.Get<int>("mp");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的mp是" +myEquip.Get<int>("mp"));
-    //            Equipment.Instance.S = myEquip.Get<int>("S");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的mp是" +myEquip.Get<int>("mp"));
-    //            Equipment.Instance.P = myEquip.Get<int>("P");
-    //            Equipment.Instance.D = myEquip.Get<int>("D");
-    //            Equipment.Instance.A = myEquip.Get<int>("A");
-    //            Equipment.Instance.I = myEquip.Get<int>("I");
-    //            Equipment.Instance.AtkValue = myEquip.Get<int>("atkValue");
-    //            Equipment.Instance.DefValue = myEquip.Get<int>("defValue");
-    //            Equipment.Instance.AValue = myEquip.Get<int>("aValue");
-    //            Equipment.Instance.MagicAtk = myEquip.Get<int>("magicAtk");
-    //            Equipment.Instance.MagicDef = myEquip.Get<int>("magicDef");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的magicDef是" +myEquip.Get<int>("magicDef"));
-    //            Equipment.Instance.Comprehension = myEquip.Get<int>("comprehension");
-    //            Equipment.Instance.Luck = myEquip.Get<int>("luck");
-    //            Equipment.Instance.AttackSpeed = myEquip.Get<int>("attackSpeed");
-    //            Equipment.Instance.stamina = myEquip.Get<int>("stamina");
-    //            Equipment.Instance.Crit = myEquip.Get<int>("crit");
-    //            Equipment.Instance.CritDamage = myEquip.Get<int>("critDamage");
-    //            Equipment.Instance.Hit = myEquip.Get<int>("hit");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的hit是" + myEquip.Get<int>("hit"));
-    //            Equipment.Instance.Agl = myEquip.Get<int>("agl");
-    //            Equipment.Instance.Counter = myEquip.Get<int>("counter");
-    //            Equipment.Instance.Double = myEquip.Get<int>("double");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的double是" + myEquip.Get<int>("double"));
-    //            Equipment.Instance.HPRecoverPerSecond = myEquip.Get<int>("hpRecoverPerSecond");
-    //            Equipment.Instance.MPRecoverPerSecond = myEquip.Get<int>("mpRecoverPerSecond");
-    //            Equipment.Instance.EquipType = myEquip.Get<string>("equipType");
-    //            Equipment.Instance.requiredS = myEquip.Get<int>("requiredS");
-    //            Equipment.Instance.requiredP = myEquip.Get<int>("requiredP");
-    //            Equipment.Instance.requiredD = myEquip.Get<int>("requiredD");
-    //            Equipment.Instance.requiredA = myEquip.Get<int>("requiredA");
-    //            Equipment.Instance.requiredI = myEquip.Get<int>("requiredI");
-    //            //Debug.Log(myEquip.Get<string>("name") + "装备获得的requiredI是" + myEquip.Get<int>("requiredI"));
-
-    //            isEnd = true;
-    //            //Debug.Log("3333333333"+isEnd);
-    //        });
-    //    }
-    //    else{
-    //        Equipment.Instance.ID = 0;
-    //        Equipment.Instance.Name = "";
-    //        Equipment.Instance.Type = "";
-    //        Equipment.Instance.Quality = "";
-    //        Equipment.Instance.Description = "";
-    //        Equipment.Instance.Capacity = 0;
-    //        Equipment.Instance.BuyPrice = 0;
-    //        Equipment.Instance.SellPrice = 0;
-    //        Equipment.Instance.Sprite = "";
-    //        Equipment.Instance.HP = 0;
-    //        Equipment.Instance.HP = 0;
-    //        Equipment.Instance.MP = 0;
-    //        Equipment.Instance.S = 0;
-    //        Equipment.Instance.P = 0;
-    //        Equipment.Instance.D = 0;
-    //        Equipment.Instance.A = 0;
-    //        Equipment.Instance.I = 0;
-    //        Equipment.Instance.AtkValue = 0;
-    //        Equipment.Instance.DefValue = 0;
-    //        Equipment.Instance.AValue = 0;
-    //        Equipment.Instance.IValue = 0;
-    //        Equipment.Instance.MagicAtk = 0;
-    //        Equipment.Instance.MagicDef = 0;
-    //        Equipment.Instance.Comprehension = 0;
-    //        Equipment.Instance.Luck = 0;
-    //        Equipment.Instance.AttackSpeed = 0;
-    //        Equipment.Instance.stamina = 0;
-    //        Equipment.Instance.Crit = 0;
-    //        Equipment.Instance.CritDamage = 0;
-    //        Equipment.Instance.Hit = 0;
-    //        Equipment.Instance.Agl = 0;
-    //        Equipment.Instance.Counter = 0;
-    //        Equipment.Instance.Double = 0;
-    //        Equipment.Instance.HPRecoverPerSecond = 0;
-    //        Equipment.Instance.MPRecoverPerSecond = 0;
-    //        Equipment.Instance.Exp = 0;
-    //        Equipment.Instance.EquipType = "";
-    //        Equipment.Instance.requiredS = 0;
-    //        Equipment.Instance.requiredP = 0;
-    //        Equipment.Instance.requiredD = 0;
-    //        Equipment.Instance.requiredA = 0;
-    //        Equipment.Instance.requiredI = 0;
-    //        isEnd = true;
-    //    }
-
-
-
-    //}
 
 
     void check(AVObject mygameScore){

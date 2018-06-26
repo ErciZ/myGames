@@ -20,8 +20,14 @@ public class PlayerData : MonoBehaviour
         set { }
     }
     
-	public Dictionary<int, int> itemList = new Dictionary<int, int>();//建立一个字典，key是物品，value是数量
-	public Dictionary<DataType, int> itemListShow = new Dictionary<DataType, int>();//建立一个字典，key是物品，value是数量
+	public Dictionary<int, int> itemList_e = new Dictionary<int, int>();//建立一个字典，key是物品，value是数量
+	public Dictionary<DataType, int> itemListShow_e = new Dictionary<DataType, int>();//建立一个字典，key是物品，value是数量
+
+	public Dictionary<int, int> itemList_c = new Dictionary<int, int>();//建立一个字典，key是物品，value是数量
+    public Dictionary<DataType, int> itemListShow_c = new Dictionary<DataType, int>();//建立一个字典，key是物品，value是数量
+
+	public Dictionary<int, int> itemList_m = new Dictionary<int, int>();//建立一个字典，key是物品，value是数量
+    public Dictionary<DataType, int> itemListShow_m = new Dictionary<DataType, int>();//建立一个字典，key是物品，value是数量
    
 
     private int coinAmount = 100;

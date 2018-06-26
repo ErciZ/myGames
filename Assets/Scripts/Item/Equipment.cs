@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Equipment : Item {
-
+    //无用
 
 
     private static Equipment instance;
